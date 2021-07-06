@@ -11,6 +11,8 @@ gem "sass-rails", ">= 6"
 gem "mysql2"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
+gem "rails-i18n"
+gem "bootstrap-sass", "3.4.1"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
