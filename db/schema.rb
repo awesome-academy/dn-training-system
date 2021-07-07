@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_07_07_020112) do
   end
 
   create_table "courses", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "name_coures"
+    t.string "name"
     t.string "description"
     t.date "start_date"
     t.date "due_date"
