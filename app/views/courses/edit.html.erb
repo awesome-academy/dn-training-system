@@ -1,0 +1,18 @@
+<% provide :title, t("course.name_coures") %>
+<h1><%= t("course.edit_my_course").upcase %></h1>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+  <%= form_for(@course) do |f| %>
+    <%= render "shared/error_messages" %>
+    <%= f.label t("course.name_coures") %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label t("course.description_course") %>
+    <%= f.text_field :description, class: "form-control" %>
+    <%= f.label t("course.start_date_course") %>
+    <%= f.date_field :start_date, as: :date, value: f.object.try(:strftime, "%m/%d/%Y"), class: "form-control" %>
+    <%= f.label t("course.due_date_course") %>
+    <%= f.date_field :due_date, as: :date, value: f.object.try(:strftime, "%m/%d/%Y"), class: "form-control" %>
+    <%= f.submit t("course.edit"), class: "btn btn-primary mt-3 mb-3" %>
+  <% end %>
+</div>
+</div>

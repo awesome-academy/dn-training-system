@@ -1,0 +1,28 @@
+<% provide(:title, t("course.list_course")) %>
+<h1><%= t("course.list_course") %></h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= t("course.name_course") %></th>
+      <th><%= t("course.description_course") %></th>
+      <th><%= t("course.start_date_course") %></th>
+      <th><%= t("course.due_date_course") %></th>
+      <th><%= t("course.action") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+        <td><%= course.start_date.strftime("%d/%m/%Y") %></td>
+        <td><%= course.due_date.strftime("%d/%m/%Y") %></td>
+        <td>
+          <%= link_to t("course.create"), new_course_path %>
+          <%= link_to t("course.edit"), edit_course_path(course) %>
+          <%= link_to t("course.delete"), course, method: :delete, data: { confirm: t("course.confirm_delete") } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

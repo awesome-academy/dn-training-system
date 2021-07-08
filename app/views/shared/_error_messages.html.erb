@@ -1,0 +1,12 @@
+<% if @course.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <%= raw t("course.errors_count", count: @course.errors.count) %>
+    </div>
+    <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
