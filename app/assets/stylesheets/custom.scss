@@ -133,6 +133,11 @@ p {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.mainpage{
+  height: 90vh;
+}
+
 @media (max-width: 767px){
   .account-login {
     width: 90%;

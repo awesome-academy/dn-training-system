@@ -22,6 +22,11 @@ module SessionsHelper
     end
   end
 
+  # Returns true if the given user is the current user.
+  def current_user? user
+    user == current_user
+  end
+
   def logged_in?
     current_user.present?
   end
@@ -36,5 +41,11 @@ module SessionsHelper
     user.forget
     cookies.delete :user_id
     cookies.delete :remember_token
+  end
+
+  def check_admin?
+    return true if current_user.admin?
+
+    false
   end
 end

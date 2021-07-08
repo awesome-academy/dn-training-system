@@ -4,13 +4,11 @@ User.create!(name: "Nguyen Quoc Hoa",
              password: "123456789",
              password_confirmation: "123456789",
              birthday: "21/03/1998",
-             role: 1,
+             role: 2,
              address: "To hieu da nang",
-             gender: "true")
+             gender: 2)
 
-# Generate a bunch of additional users.
-
-10.times do |n|
+20.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "123456789"
@@ -19,9 +17,23 @@ User.create!(name: "Nguyen Quoc Hoa",
   User.create!(name: name, email: email, password: password,
                password_confirmation: password,
                birthday: birthday,
-               role: 1,
+               role: 0,
                address: address,
-               gender: "true",
+               gender: 1,
                created_at: Time.zone.now)
 end
 
+5.times do |n|
+  name = Faker::Name.name
+  email = "example-#{n+1+21}@railstutorial.org"
+  password = "123456789"
+  birthday = Faker::Date.birthday(min_age: 18, max_age: 65)
+  address = address = Faker::Address.street_address
+  User.create!(name: name, email: email, password: password,
+               password_confirmation: password,
+               birthday: birthday,
+               role: 1,
+               address: address,
+               gender: 0,
+               created_at: Time.zone.now)
+end

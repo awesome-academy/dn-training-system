@@ -1,17 +1,22 @@
 <nav class="navbar navbar-inverse">
   <div class = "container">
     <div class="navbar-header">
-      <span class = "navbar-brand"><%= link_to image_tag("sun.png", alt: "Sun", width: "100px"), root_path%></span>
+      <span class = "navbar-brand"><%= link_to image_tag("sun.png", alt: "Sun", width: "100px"), root_path %></span>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to image_tag("en.png", alt: t(:viet_nam), width: "20px"), locale: :en %></li>
       <li><%= link_to image_tag("vi.png", alt: t(:english), width: "20vw"), locale: :vi %></li>
       <% if logged_in? %>
         <li> <%= link_to t(:log_out), logout_path, method: :delete %></li>
+        <% if check_admin? %>
+          <li><%= link_to t(:signup_link), signup_path %></li>
+          <li> <%= link_to t(:show_users), users_path %></li>
+        <% end %>
+        <li><%= link_to t(:setting), edit_user_path(current_user) %></li>
+        <li><%= link_to t(:account), user_path(current_user) %></li>
       <% else %>
         <li><%= link_to t(:sign_in), login_path, class: "nav-link" %></li>
       <% end %>
-      <li><%= link_to t(:sign_up), root_path, class: "nav-link" %></li>
     </ul>
   </div>
 </nav>
