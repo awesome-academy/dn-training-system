@@ -1,32 +1,8 @@
 <% provide(:title, t(:home)) %>
-<h1><%= t(:app_name).upcase %></h1>
-<main role="main">
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-3"><%= t(:title_homepage) %></h1>
-      <p><%= t(:description) %></p>
-      <p><%= link_to t(:learn_more), root_path, :class => "btn btn-primary btn-lg" %></p>
-    </div>
-  </div>
+<h1><%= t(:app_name) %></h1>
+<div class="container jumbotron">
+  <h1><%= t(:title_homepage) %></h1>
+  <p><%= t(:description) %></p>
+  <p><%= link_to t(:learn_more), root_path, :class => "btn btn-primary btn-lg" %></p>
+</div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h2><%= t(:learn_open) %></h2>
-        <%= link_to image_tag("rails.jpg", alt: "Rails logo", width: "240vw"), "https://rubyonrails.org/" %>
-        <p><%= link_to t(:view_details), root_path, :class => "btn btn-secondary" %></p>
-      </div>
-      <div class="col-md-4">
-        <h2><%= t(:learn_intern) %></h2>
-        <%= link_to image_tag("rails.jpg", alt: "Rails logo", width: "240vw"), "https://rubyonrails.org/" %>
-        <p><%= link_to t(:view_details), root_path, :class => "btn btn-secondary" %></p>
-      </div>
-      <div class="col-md-4">
-        <h2><%= t(:learn_fresher) %></h2>
-        <%= link_to image_tag("rails.jpg", alt: "Rails logo", width: "240vw"), "https://rubyonrails.org/" %>
-        <p><%= link_to t(:view_details), root_path, :class => "btn btn-secondary" %></p>
-      </div>
-    </div>
-    <hr>
-  </div>
-</main>

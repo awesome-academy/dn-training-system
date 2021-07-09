@@ -1,31 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <%= link_to t(:app_name), root_path, :class => "navbar-brand" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item mr-3">
-        <%= link_to image_tag("en.png", alt: "Viet_Nam", width: "50vw"), locale: :en, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to image_tag("vi.png", alt: "English", width: "50vw"), locale: :vi, :class => "nav-link" %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to t(:home), root_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t(:introduce), root_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t(:help), root_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-         <%= link_to t(:sign_in), root_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-          <%= link_to t(:sign_up), root_path, :class => "nav-link" %>
-      </li>
+<nav class="navbar navbar-inverse">
+  <div class = "container">
+    <div class="navbar-header">
+      <span class = "navbar-brand"><%= link_to image_tag("sun.png", alt: "Sun", width: "100px"), root_path%></span>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to image_tag("en.png", alt: t(:viet_nam), width: "20px"), locale: :en %></li>
+      <li><%= link_to image_tag("vi.png", alt: t(:english), width: "20vw"), locale: :vi %></li>
+      <% if logged_in? %>
+        <li> <%= link_to t(:log_out), logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to t(:sign_in), login_path, class: "nav-link" %></li>
+      <% end %>
+      <li><%= link_to t(:sign_up), root_path, class: "nav-link" %></li>
     </ul>
   </div>
 </nav>

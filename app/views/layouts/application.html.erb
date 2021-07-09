@@ -8,13 +8,15 @@
     <script type="text/javascript">
       var LOCALE = "<%= I18n.locale %>";
     </script>
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track" => true %>
   </head>
-
   <body>
     <%= render "layouts/header" %>
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>
