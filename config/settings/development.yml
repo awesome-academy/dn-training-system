@@ -2,3 +2,4 @@ user:
   max_length: 50
   pass:
     length_min: 6
+  page_size: 5

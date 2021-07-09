@@ -1,0 +1,29 @@
+<% provide :title, @user.name %>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col"><%= t :col_id %></th>
+    <th scope="col"><%= t :col_name %></th>
+    <th scope="col"><%= t :col_email %></th>
+    <th scope="col"><%= t :col_address %></th>
+    <th scope="col"><%= t :col_gender %></th>
+    <th scope="col"><%= t :col_role %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <%= gravatar_for @user %>
+    <tr>
+      <th scope="row"><%= @user.id %></th>
+      <td><%= @user.name %></td>
+      <td><%= @user.email %></td>
+      <td><%= @user.address %></td>
+      <td><%= @user.gender %></td>
+      <td><%= @user.role %></td>
+    </tr>
+  </tbody>
+</table>
+<% if check_admin? && @user.id != current_user.id %>
+  <%= button_to t(:delete), @user, method: :delete, onclick: t(:confirm_delete), class: "btn btn-danger" %>
+  <%= link_to t(:edit), edit_user_path, class: "btn btn-primary" %>
+<% end %>
