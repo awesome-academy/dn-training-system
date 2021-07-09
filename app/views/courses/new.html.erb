@@ -1,0 +1,24 @@
+<% provide :title, t("course.name_coures") %>
+<h1><%= t("course.create_my_course").upcase %></h1>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+  <%= form_for(@course) do |f| %>
+    <%= render "shared/error_messages" %>
+    <%= f.label t("course.name_coures") %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label t("course.description_course") %>
+    <%= f.text_field :description, class: "form-control" %>
+    <%= f.label t("course.start_date_course") %>
+    <%= f.date_field :start_date, as: :date, value: f.object.try(:strftime, "%m/%d/%Y"), class: "form-control" %>
+    <%= f.label t("course.due_date_course") %>
+    <%= f.date_field :due_date, as: :date, value: f.object.try(:strftime, "%m/%d/%Y"), class: "form-control" %>
+    <%= f.label t("course.status") %>
+    <%= f.select :status, map_status, {}, class: "form-control" %>
+    <div class="form-group">
+      <%= f.label t("course.subject_id") %>
+      <%= f.select :subject_ids, options_for_select(@subjects), { include_blank: true }, { class: "chosen-select", multiple: "true" } %>
+    </div>
+    <%= f.submit t("course.create_my_course"), class: "btn btn-primary" %>
+  <% end %>
+</div>
+</div>
