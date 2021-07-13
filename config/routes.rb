@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     get "/logout", to: "sessions#destroy"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    resources :courses
   end
 end

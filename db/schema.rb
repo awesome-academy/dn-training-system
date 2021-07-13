@@ -16,11 +16,9 @@ ActiveRecord::Schema.define(version: 2021_07_07_071044) do
     t.integer "status", default: 0
     t.bigint "course_id"
     t.bigint "subject_id"
-    t.bigint "course_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["course_id"], name: "fk_rails_e78a7f7f61"
-    t.index ["course_user_id"], name: "fk_rails_aabcd6a5a4"
     t.index ["subject_id"], name: "fk_rails_05edb1ba94"
   end
 
@@ -41,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_07_07_071044) do
     t.date "due_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0
   end
 
   create_table "reports", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
@@ -105,7 +104,6 @@ ActiveRecord::Schema.define(version: 2021_07_07_071044) do
     t.string "remember_digest"
   end
 
-  add_foreign_key "course_subjects", "course_users"
   add_foreign_key "course_subjects", "courses"
   add_foreign_key "course_subjects", "subjects"
   add_foreign_key "course_users", "courses"
