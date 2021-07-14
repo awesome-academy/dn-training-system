@@ -1,0 +1,21 @@
+<h1><%= t :h1_show_courses_users %></h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col"><%= t :name_show_courses_users %></th>
+    <th scope="col"><%= t :description_show_courses_users %></th>
+    <th scope="col"><%= t :start_date_show_courses_users %></th>
+    <th scope="col"><%= t :due_date_show_courses_users %></th>
+    <th scope="col"><%= t :status_show_courses_users %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= link_to @course.name,  user_course_subject_path(@course.id) %></td>
+      <td><%= @course.description %></td>
+      <td><%= l(@course.start_date.to_date, format: :default) %></td>
+      <td><%= l(@course.due_date.to_date, format: :default) %></td>
+      <td><%= @course_user.status %></td>
+    </tr>
+  </tbody>
+</table>

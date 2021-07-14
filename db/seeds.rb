@@ -6,7 +6,7 @@ User.create!(name: "Lương Văn Lĩnh",
              birthday: "21/03/1998",
              role: 1,
              address: "Quảng Nam",
-             gender: "true")
+             gender: true)
 
 Course.create!(name: "Khóa học Ruby",
                description: "Khóa học dành cho sinh viên",
@@ -26,13 +26,13 @@ Subject.create!(name_subject: "Học git",
   email = "example-#{n+1}@railstutorial.org"
   password = "123456789"
   birthday = Faker::Date.birthday(min_age: 18, max_age: 65)
-  address = address = Faker::Address.street_address
-  User.create!(name: name, email: email, password: password,
+  address = Faker::Address.street_address
+  User.create!(name: "User " + name, email: email, password: password,
                password_confirmation: password,
                birthday: birthday,
                role: 1,
                address: address,
-               gender: "true",
+               gender: true,
                created_at: Time.zone.now)
 end
 
@@ -55,4 +55,10 @@ end
   Subject.create!(name_subject: name_subject, description: description,
                   total_date_lean: total_date_lean, start_date_learn: start_date_learn,
                   created_at: Time.zone.now)
+end
+
+10.times do |n|
+  name = Faker::Name.name
+  Task.create!(name_task: "Task " + name, subject_id: 1,
+               created_at: Time.zone.now)
 end
