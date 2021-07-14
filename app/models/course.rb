@@ -4,6 +4,7 @@ class Course < ApplicationRecord
   has_many :subjects, through: :course_subjects
   accepts_nested_attributes_for :course_subjects
   scope :last_course, ->{order :status}
+  validates :name, :description, :start_date, :due_date, presence: true
 
   enum status: {in_process: 0, done: 1, pending: 2, closed: 3}
 end

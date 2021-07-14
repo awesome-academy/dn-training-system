@@ -1,0 +1,24 @@
+<% provide(:title, t("course.list_course_subject")) %>
+<h1><%= t("course.list_course_subject") %></h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= t("course.subject.name_subject") %></th>
+      <th><%= t("course.subject.description") %></th>
+      <th><%= t("course.subject.total_date_lean") %></th>
+      <th><%= t("course.subject.start_date_learn") %></th>
+      <th><%= t("course.action") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name_subject %></td>
+        <td><%= subject.description %></td>
+        <td><%= subject.total_date_lean %></td>
+        <td><%= l subject.start_date_learn.to_date, format: :default %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @subjects, theme: "twitter-bootstrap-3" %>

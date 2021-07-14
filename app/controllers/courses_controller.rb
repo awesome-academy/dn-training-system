@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
-  before_action :list_subjects, only: [:new]
+  before_action :load_course, only: [:show]
+  before_action :list_subjects, only: [:new, :edit, :create, :update]
 
   def new
     @course = Course.new
@@ -10,13 +11,17 @@ class CoursesController < ApplicationController
                      .per(Settings.courses_per_page)
   end
 
-  def show; end
+  def show
+    @subjects = @course.subjects.page(params[:page]).per(Settings.subject_per_page)
+
+    flash[:danger] = t "course.course_not_subject" if @subjects.empty?
+  end
 
   def create
     @course = Course.new course_params
     if @course.save
 
-      flash[:success] = t("course.create_course_success")
+      flash[:success] = t "course.create_course_success"
       redirect_to courses_path
     else
       render :new
@@ -33,5 +38,13 @@ class CoursesController < ApplicationController
 
   def list_subjects
     @subjects = Subject.pluck(:name_subject, :id)
+  end
+
+  def load_course
+    @course = Course.find_by id: params[:id]
+     return if @course
+
+     flash[:danger] =  t "course.course_not_find"
+     redirect_to courses_path
   end
 end
