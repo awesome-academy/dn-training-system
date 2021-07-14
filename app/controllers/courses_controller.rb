@@ -10,7 +10,10 @@ class CoursesController < ApplicationController
                      .per(Settings.courses_per_page)
   end
 
-  def show; end
+  def show
+    @course = Course.find_by id: params[:id]
+    @subjects = @course.subjects.page(params[:page]).per(Settings.subject_per_page)
+  end
 
   def create
     @course = Course.new course_params
@@ -20,6 +23,22 @@ class CoursesController < ApplicationController
       redirect_to courses_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @course = Course.find_by id: params[:id]
+    @subjects = Subject.all
+  end
+
+  def update
+    @course = Course.find_by id: params[:id]
+    if @course.update course_params
+
+      flash[:success] = t("course.update_course_success")
+      redirect_to @course
+    else
+      render :edit
     end
   end
 

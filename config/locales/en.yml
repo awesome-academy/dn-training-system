@@ -45,6 +45,14 @@ en:
     errors_count: "The form contains %{count} errors"
     status: "Status"
     subject_id: "Subject"
+    list_course_subject: "List subject of course"
+    edit_my_course: "Edit course"
+    update_course_success: "Update course success"
+    subject:
+      name_subject: "Nam Subject"
+      description: "Description"
+      total_date_lean: "Total date learn"
+      start_date_learn: "Start date learn"
   date:
     formats:
       default: "%d/%m/%Y"

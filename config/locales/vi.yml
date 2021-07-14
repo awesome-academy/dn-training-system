@@ -43,6 +43,14 @@ vi:
     errors_count: "Thông tin chứa %{count} lỗi"
     status: "Trạng thái"
     subject_id: "Môn học"
+    list_course_subject: "Danh sách các môn học thuộc khóa học"
+    edit_my_course: "Chỉnh sửa khóa học"
+    update_course_success: "Chỉnh sửa khóa học thành công"
+    subject:
+      name_subject: "Tên môn học"
+      description: "Mô tả"
+      total_date_lean: "Tổng ngày học"
+      start_date_learn: "Ngày bắt đầu"
   date:
     formats:
       default: "%d/%m/%Y"
