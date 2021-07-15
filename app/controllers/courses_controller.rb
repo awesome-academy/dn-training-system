@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :load_course, only: [:show]
+  before_action :load_course, only: [:show, :edit, :update, :destroy]
   before_action :list_subjects, only: [:new, :edit, :create, :update]
 
   def new
@@ -26,6 +26,12 @@ class CoursesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @course.destroy
+    flash[:success] = t "course.delete_course_success"
+    redirect_to courses_path
   end
 
   private

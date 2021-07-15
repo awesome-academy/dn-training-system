@@ -51,17 +51,29 @@ vi:
     list_course_subject: "Danh sách các môn học thuộc khóa học "
     course_not_find: "Không tìm thấy khóa học"
     course_not_subject: "Không có môn học nào trong khóa học này"
+    delete_course_success: "Xóa khóa học thành công"
+    confirm_delete: "Bạn có chắc chắn muốn xóa không?"
     subject:
       name_subject: "Tên môn học"
       description: "Mô tả"
       total_date_lean: "Tổng ngày học"
       start_date_learn: "Ngày bắt đầu"
+
+  subject:
+      name_subject: "Tên môn học"
+      description: "Mô tả"
+      total_date_lean: "Tổng ngày học"
+      start_date_learn: "Ngày bắt đầu"
+      create_success: "Thêm môn học thành công"
+      list_subject: "Danh sách môn học"
+      create_subject: "Thêm môn học"
+
   date:
     formats:
       default: "%d/%m/%Y"
       short: "%b %d"
       long: "%B %d, %Y"
-  
+
   course_users:
     show:
       name: "name course"

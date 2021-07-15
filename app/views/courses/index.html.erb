@@ -20,6 +20,7 @@
         <td><%= l(course.start_date.to_date, format: :default) %></td>
         <td><%= l(course.due_date.to_date, format: :default) %></td>
         <td><%= course.status %></td>
+        <td><%= link_to t("course.delete"), course, method: :delete, data: { confirm: t("course.confirm_delete") } %></td>
       </tr>
     <% end %>
   </tbody>
