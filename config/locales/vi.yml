@@ -25,6 +25,11 @@ vi:
   user_nil: "Không tìm thấy user"
   log_out: "Đăng suất"
   remember_mess: "Nhớ mật khẩu"
+  viet_nam: "Viet_Nam"
+  english: "English"
+  flash_danger_c_course_users: "course not found!"
+  show_course: "show courses"
+
   course:
     name_course: "Khóa học"
     description_course: "Mô tả"
@@ -51,6 +56,23 @@ vi:
       description: "Mô tả"
       total_date_lean: "Tổng ngày học"
       start_date_learn: "Ngày bắt đầu"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+  
+  course_users:
+    show:
+      name: "name course"
+      description: "description course"
+      start_date: "start date"
+      due_date: "due date"
+      status: "status"
+      h1: "Courses"
+    index:
+      h1: "List course"
+
   date:
     formats:
       default: "%d/%m/%Y"

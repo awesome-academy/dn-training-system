@@ -27,6 +27,8 @@ en:
   remember_mess: "Remember me on this computer"
   viet_nam: "Viet_Nam"
   english: "English"
+  flash_danger_c_course_users: "course not found!"
+  show_course: "show courses"
   course:
     name_course: "Name course"
     description_course: "Description"
@@ -53,6 +55,23 @@ en:
       description: "Description"
       total_date_lean: "Total date learn"
       start_date_learn: "Start date learn"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+  course_users:
+    show:
+      name: "name course"
+      description: "description course"
+      start_date: "start date"
+      due_date: "due date"
+      status: "status"
+      h1: "Courses"
+    index:
+      h1: "List course"
+
   date:
     formats:
       default: "%d/%m/%Y"

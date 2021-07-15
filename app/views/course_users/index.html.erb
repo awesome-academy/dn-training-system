@@ -1,0 +1,15 @@
+<h1><%= t ".h1" %></h1>
+<div class="row">
+  <% @course_users.each do |course_user| %>
+    <div class="card col-md-2" style="width: 18rem;">
+      <%= image_tag "sun.png", class: "card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= course_user.course.name %></h5>
+        <p class="card-text"><%= course_user.course.description %></p>
+        <p class="card-text"><small class="text-muted text-primary"><%= t :status_index_course_users %><%= course_user.status %></small></p>
+        <%= link_to course_user.course.name , course_user_path(course_user.id), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= paginate @course_users, theme: "twitter-bootstrap-3" %>

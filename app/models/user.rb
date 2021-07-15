@@ -4,7 +4,8 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   VALID_NAME_REGEX = /\A[^0-9`!@#\$%\^&*+_=]+\z/.freeze
 
-  has_secure_password
+  has_many :course_users, dependent: :destroy
+
   validates :email, presence: true,
             length: {maximum: Settings.user.max_length},
             format: {with: VALID_EMAIL_REGEX}, uniqueness: true
@@ -15,7 +16,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: Settings.user.pass.length_min}
 
   before_save :downcase_email
-
+  has_secure_password
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
