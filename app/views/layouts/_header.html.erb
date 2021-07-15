@@ -8,6 +8,7 @@
       <li><%= link_to image_tag("vi.png", alt: t(:english), width: "20vw"), locale: :vi %></li>
       <% if logged_in? %>
         <li> <%= link_to t(:log_out), logout_path, method: :delete %></li>
+        <li> <%= link_to t(:show_course), course_users_path %></li>
       <% else %>
         <li><%= link_to t(:sign_in), login_path, class: "nav-link" %></li>
       <% end %>
