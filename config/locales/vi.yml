@@ -29,6 +29,8 @@ vi:
   english: "English"
   flash_danger_c_course_users: "course not found!"
   show_course: "show courses"
+  status: "Trang thai: "
+  not_have_subject: "khoa hoc khong co lop"
 
   course:
     name_course: "Khóa học"
@@ -72,6 +74,12 @@ vi:
       h1: "Courses"
     index:
       h1: "List course"
+
+  user_course_subjects:
+    index:
+      h1: "List subjects"
+      name: "name subject"
+      status: "status"
 
   date:
     formats:

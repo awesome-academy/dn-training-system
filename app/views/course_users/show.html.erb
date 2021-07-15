@@ -1,21 +1,22 @@
+<h1><strong><%= t ".name_course" %></strong><%= @course.name %></h1>
+<p class="text-left"><strong><%= t ".description" %></strong><%= @course.description %></p>
+<p class="text-left"><strong><%= t ".start_date" %></strong><%= l(@course.start_date.to_date, format: :default) %><%= t ".due_date" %> <%= l(@course.due_date.to_date, format: :default) %></p>
+<p class="text-left"><strong><%= t ".status" %></strong><%= @course_user.status %></p>
+
 <h1><%= t ".h1" %></h1>
 <table class="table">
   <thead>
   <tr>
-    <th scope="col"><%= t ".name" %></th>
-    <th scope="col"><%= t ".description" %></th>
-    <th scope="col"><%= t ".start_date" %></th>
-    <th scope="col"><%= t ".due_date" %></th>
+    <th scope="col"><%= t ".name_subject" %></th>
     <th scope="col"><%= t ".status" %></th>
   </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><%= link_to @course.name,  "" %></td>
-      <td><%= @course.description %></td>
-      <td><%= l(@course.start_date.to_date, format: :default) %></td>
-      <td><%= l(@course.due_date.to_date, format: :default) %></td>
-      <td><%= @course_user.status %></td>
-    </tr>
+    <% @user_course_subjects.each do |user_course_subject| %>
+      <tr>
+        <td><%= link_to user_course_subject.name_subject, "" %></td>
+        <td><%= user_course_subject.status %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table

@@ -29,6 +29,10 @@ en:
   english: "English"
   flash_danger_c_course_users: "course not found!"
   show_course: "show courses"
+  flash_danger_c_user_tasks: "can't load task"
+  status: "Status: "
+  not_have_subject: "subject not found!"
+
   course:
     name_course: "Name course"
     description_course: "Description"
@@ -63,14 +67,21 @@ en:
 
   course_users:
     show:
-      name: "name course"
-      description: "description course"
-      start_date: "start date"
-      due_date: "due date"
-      status: "status"
-      h1: "Courses"
+      name_course: "Name course: "
+      name_subject: "Name subject"
+      description: "Description course: "
+      start_date: "Start date: "
+      due_date: " to Due date: "
+      status: "Status: "
+      h1: "List Subject"
     index:
       h1: "List course"
+
+  user_course_subjects:
+    index:
+      h1: "List subjects"
+      name: "name subject"
+      status: "status"
 
   date:
     formats:
