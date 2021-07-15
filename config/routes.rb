@@ -10,5 +10,8 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :courses
+    resources :course_users
+    resources :user_course_subjects
+    resources :user_tasks
   end
 end

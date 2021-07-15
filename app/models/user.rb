@@ -4,15 +4,16 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   VALID_NAME_REGEX = /\A[^0-9`!@#\$%\^&*+_=]+\z/.freeze
 
+  has_many :course_users, dependent: :destroy
+
   has_secure_password
   validates :email, presence: true,
             length: {maximum: Settings.user.max_length},
             format: {with: VALID_EMAIL_REGEX}, uniqueness: true
   validates :name, presence: true, length: {maximum: Settings.user.max_length},
             format: {with: VALID_NAME_REGEX}
-  validates :gender, inclusion: {in: [true, false]}
-  validates :password, presence: true
-  validates :password, length: {minimum: Settings.user.pass.length_min}
+  validates :password, presence: true, allow_nil: true,
+   length: {minimum: Settings.user.pass.length_min}
 
   before_save :downcase_email
 
