@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :load_course, only: [:show]
+  before_action :load_course, only: [:show, :edit, :update]
   before_action :list_subjects, only: [:new, :edit, :create, :update]
 
   def new
@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @subjects = @course.subjects.page(params[:page]).per(Settings.subject_per_page)
+    @subjects = @course.subjects.last_subject.page(params[:page]).per(Settings.subject_per_page)
 
     flash[:danger] = t "course.course_not_subject" if @subjects.empty?
   end
@@ -28,11 +28,22 @@ class CoursesController < ApplicationController
     end
   end
 
+  def edit
+    @subjects = Subject.select :id, :name_subject
+  end
+
+  def update
+    render :edit unless @course.update course_params
+
+    flash[:success] = t "course.update_course_success"
+    redirect_to @course
+  end
+
   private
 
   def course_params
     params.require(:course).permit(:name, :description, :start_date, :due_date,
-     :status, subject_ids: [], course_subjects_attributes:[:id, :course_id,
+                                   :status, subject_ids: [], course_subjects_attributes: [:id, :course_id,
      :subject_id, :status])
   end
 
@@ -42,9 +53,9 @@ class CoursesController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:id]
-     return if @course
+    return if @course
 
-     flash[:danger] =  t "course.course_not_find"
-     redirect_to courses_path
+    flash[:danger] = t "course.course_not_find"
+    redirect_to courses_path
   end
 end
