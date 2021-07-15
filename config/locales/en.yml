@@ -28,7 +28,7 @@ en:
   viet_nam: "Viet_Nam"
   english: "English"
   course:
-    name_coures: "Course"
+    name_course: "Name course"
     description_course: "Description"
     start_date_course: "Start Date"
     due_date_course: "Due Date"
@@ -45,6 +45,14 @@ en:
     errors_count: "The form contains %{count} errors"
     status: "Status"
     subject_id: "Subject"
+    list_course_subject: "List subject of course"
+    course_not_find: "Course not find"
+    course_not_subject: "Course hasn't subject"
+    subject:
+      name_subject: "Name Subject"
+      description: "Description"
+      total_date_lean: "Total date learn"
+      start_date_learn: "Start date learn"
   date:
     formats:
       default: "%d/%m/%Y"

@@ -1,8 +1,8 @@
 <% provide :title, t("course.name_coures") %>
-<h1><%= t("course.create_my_course").upcase %></h1>
+<h1><%= t("course.edit_my_course").upcase %></h1>
 <div class="row">
-<div class="col-md-6 col-md-offset-3">
-  <%= form_for(@course) do |f| %>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@course) do |f| %>
     <%= render "shared/error_messages", object: @course %>
     <%= f.label t("course.name_coures") %>
     <%= f.text_field :name, class: "form-control" %>
@@ -16,9 +16,9 @@
     <%= f.select :status, map_status, {}, class: "form-control" %>
     <div class="form-group">
       <%= f.label t("course.subject_id") %>
-      <%= f.select :subject_ids, options_for_select(@subjects), { include_blank: true }, { class: "chosen-select", multiple: "true" } %>
+      <%= f.select :subject_ids, options_for_select(option_key_value(@subjects.map), @course.subjects.ids), { include_blank: true }, { class: "chosen-select", multiple: "true" } %>
     </div>
-    <%= f.submit t("course.create_my_course"), class: "btn btn-primary" %>
+    <%= f.submit t("course.ed_my_course"), class: "btn btn-primary" %>
   <% end %>
-</div>
+  </div>
 </div>
