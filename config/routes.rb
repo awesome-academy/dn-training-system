@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     resources :users do
       resources :courses, only: :show do
         get "/subjects", to: "course_users#show"
+        resources :subjects do
+          get "/tasks", to: "course_users#show_tasks"
+        end
       end
     end
   end

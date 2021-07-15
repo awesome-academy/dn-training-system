@@ -1,0 +1,25 @@
+<h1><strong><%= t ".name_subject" %></strong><%= @subject.name_subject %></h1>
+<p class="text-left"><strong><%= t ".description" %></strong><%= @subject.description %></p>
+<p class="text-left"><strong><%= t ".start_date" %></strong><%= l(@subject.start_date_learn.to_date, format: :default) %></p>
+<p class="text-left"><strong><%= t ".total_date" %></strong><%= @subject.total_date_lean %></p>
+<p class="text-left"><strong><%= t ".status" %></strong><%= @user_course_subject.status %></p>
+
+
+<h1><%= t ".list_task" %></h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col"><%= t ".name_task" %></th>
+    <th scope="col"><%= t ".task_status" %></th>
+    <th scope="col"><%= t ".action" %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @user_tasks.zip(@tasks).each do |(user_task, task)| %>
+        <tr>
+          <td><%= task.name_task %></td>
+          <td><%= user_task.status %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -32,6 +32,9 @@ en:
   flash_danger_c_user_tasks: "can't load task"
   status: "Status: "
   not_have_subject: "subject not found!"
+  not_found_task: "can't load tasks"
+  not_found_subject: "can't load subject!"
+  not_found_user_course_subject: "can't load user course!"
 
   course:
     name_course: "Name course"
@@ -78,6 +81,22 @@ en:
       h1: "List Subject"
     index:
       h1: "List course"
+    show_tasks:
+      name_task: "Name task"
+      task_status: "Task status"
+      list_task: "List tasks"
+      description: "Description: "
+      start_date: "Start date: "
+      total_date: "Total date: "
+      status: "Status subject: "
+      name_subject: "Name subject: "
+      action: "Action"
+
+  user_course_subjects:
+    index:
+      h1: "List subjects"
+      name: "name subject"
+      status: "status"
 
   user_course_subjects:
     index:
