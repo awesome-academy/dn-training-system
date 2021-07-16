@@ -50,6 +50,8 @@ en:
     list_course_subject: "List subject of course"
     course_not_find: "Course not find"
     course_not_subject: "Course hasn't subject"
+    edit_my_course: "Edit course"
+    update_course_success: "Update course success"
     subject:
       name_subject: "Name Subject"
       description: "Description"

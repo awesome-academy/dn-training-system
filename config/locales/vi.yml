@@ -51,6 +51,8 @@ vi:
     list_course_subject: "Danh sách các môn học thuộc khóa học "
     course_not_find: "Không tìm thấy khóa học"
     course_not_subject: "Không có môn học nào trong khóa học này"
+    edit_my_course: "Chỉnh sửa khóa học"
+    update_course_success: "Chỉnh sửa khóa học thành công"
     subject:
       name_subject: "Tên môn học"
       description: "Mô tả"
