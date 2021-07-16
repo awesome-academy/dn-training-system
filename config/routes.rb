@@ -11,5 +11,10 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :courses
     resources :course_users
+    resources :users do
+      resources :courses, only: :show do
+        get "/subjects", to: "course_users#show"
+      end
+    end
   end
 end

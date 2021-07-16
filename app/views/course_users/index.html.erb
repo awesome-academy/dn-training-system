@@ -6,8 +6,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= course_user.course.name %></h5>
         <p class="card-text"><%= course_user.course.description %></p>
-        <p class="card-text"><small class="text-muted text-primary"><%= t :status_index_course_users %><%= course_user.status %></small></p>
-        <%= link_to course_user.course.name , course_user_path(course_user.id), class: "btn btn-primary" %>
+        <p class="card-text"><small class="text-muted text-primary"><%= t :status %><%= course_user.status %></small></p>
+        <%= link_to course_user.course.name , user_course_subjects_path(user_id: current_user.id, course_id: course_user.course.id), class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
