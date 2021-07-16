@@ -61,6 +61,15 @@ en:
       description: "Description"
       total_date_lean: "Total date learn"
       start_date_learn: "Start date learn"
+  subject:
+    name_subject: "Name Subject"
+    description: "Description"
+    total_date_lean: "Total date learn"
+    start_date_learn: "Start date learn"
+    create_success: "Create subject success"
+    list_subject: "List Subject"
+    create_subject: "Create subject"
+
   date:
     formats:
       default: "%d/%m/%Y"
