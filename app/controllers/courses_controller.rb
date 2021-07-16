@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :load_course, only: [:show, :edit, :update]
+  before_action :load_course, only: [:show, :edit, :update, :destroy]
   before_action :list_subjects, only: [:new, :edit, :create, :update]
 
   def new
@@ -37,6 +37,16 @@ class CoursesController < ApplicationController
 
     flash[:success] = t "course.update_course_success"
     redirect_to @course
+  end
+
+  def destroy
+    if @course.destroy
+      flash[:success] = t "course.delete_course_success"
+      redirect_to courses_path
+    else
+      flash[:danger] =  t "course.course_not_found"
+      redirect_to courses_path
+    end
   end
 
   private
