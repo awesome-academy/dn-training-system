@@ -6,4 +6,5 @@ class UserCourseSubject < ApplicationRecord
   enum status: {in_process: 0, pending: 1, done: 2, closed: 3}
 
   delegate :name_subject, to: :course_subject
+  delegate :subject_id, to: :course_subject
 end

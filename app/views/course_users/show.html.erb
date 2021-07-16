@@ -14,7 +14,7 @@
   <tbody>
     <% @user_course_subjects.each do |user_course_subject| %>
       <tr>
-        <td><%= link_to user_course_subject.name_subject, "" %></td>
+        <td><%= link_to user_course_subject.name_subject, user_course_subject_tasks_path(user_id: current_user.id, course_id: @course.id, subject_id: user_course_subject.subject_id, id: user_course_subject.id) %></td>
         <td><%= user_course_subject.status %></td>
       </tr>
     <% end %>
