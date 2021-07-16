@@ -16,5 +16,6 @@ Rails.application.routes.draw do
         get "/subjects", to: "course_users#show"
       end
     end
+    resources :subjects
   end
 end
