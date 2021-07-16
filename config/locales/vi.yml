@@ -55,6 +55,9 @@ vi:
     course_not_subject: "Không có môn học nào trong khóa học này"
     edit_my_course: "Chỉnh sửa khóa học"
     update_course_success: "Chỉnh sửa khóa học thành công"
+    delete_course_success: "Xóa khóa học thành công"
+    confirm_delete: "Bạn có chắc chắn muốn xóa không?"
+    course_not_found: "Không tìm thấy khóa học"
     subject:
       name_subject: "Tên môn học"
       description: "Mô tả"
@@ -65,7 +68,7 @@ vi:
       default: "%d/%m/%Y"
       short: "%b %d"
       long: "%B %d, %Y"
-  
+
   course_users:
     show:
       name: "name course"

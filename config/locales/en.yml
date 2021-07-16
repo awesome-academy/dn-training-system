@@ -56,6 +56,9 @@ en:
     course_not_subject: "Course hasn't subject"
     edit_my_course: "Edit course"
     update_course_success: "Update course success"
+    delete_course_success: "Delete course success"
+    confirm_delete: "Are you sure you want to delete?"
+    course_not_found: "Course not found"
     subject:
       name_subject: "Name Subject"
       description: "Description"
